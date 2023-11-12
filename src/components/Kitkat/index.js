@@ -5,6 +5,9 @@ const Kitkat = () => {
 
     const handleTap = () => {
         setTapCount(tapCount + 1);
+        if ('vibrate' in navigator) {
+            navigator.vibrate(200);
+        }
     };
 
     const divStyle = {
@@ -15,7 +18,7 @@ const Kitkat = () => {
     };
 
     return (
-        <div >
+        <div>
             <div>
                 <h1>Kitkat Taps: {tapCount}</h1>
             </div>
